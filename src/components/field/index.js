@@ -95,6 +95,7 @@ export default class TextField extends PureComponent {
     this.onChange = this.onChange.bind(this);
     this.onChangeText = this.onChangeText.bind(this);
     this.onContentSizeChange = this.onContentSizeChange.bind(this);
+    this.onSubmitEditing = this.onSubmitEditing.bind(this);
 
     this.updateRef = this.updateRef.bind(this, 'input');
 
@@ -218,6 +219,14 @@ export default class TextField extends PureComponent {
     }
 
     this.setState({ focused: false });
+  }
+
+  onSubmitEditing(event) {
+    let {onSubmitEditing} = this.props;
+
+    if ('function' === typeof onSubmitEditing) {
+      onSubmitEditing(event);
+    }
   }
 
   onChange(event) {
@@ -494,8 +503,10 @@ export default class TextField extends PureComponent {
               onContentSizeChange={this.onContentSizeChange}
               onFocus={this.onFocus}
               onBlur={this.onBlur}
+              onSubmitEditing={this.onSubmitEditing}
               value={value}
               ref={this.updateRef}
+              autoCapitalize={this.props.autoCapitalize ? this.props.autoCapitalize : 'none'}
             />
 
             {this.renderAffix('suffix', active, focused)}
