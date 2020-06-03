@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { Animated } from 'react-native';
 
@@ -10,31 +9,6 @@ export default class Label extends PureComponent {
     focused: false,
     errored: false,
     restricted: false,
-  };
-
-  static propTypes = {
-    active: PropTypes.bool,
-    focused: PropTypes.bool,
-    errored: PropTypes.bool,
-    restricted: PropTypes.bool,
-
-    baseSize: PropTypes.number.isRequired,
-    fontSize: PropTypes.number.isRequired,
-    activeFontSize: PropTypes.number.isRequired,
-    basePadding: PropTypes.number.isRequired,
-
-    tintColor: PropTypes.string.isRequired,
-    baseColor: PropTypes.string.isRequired,
-    errorColor: PropTypes.string.isRequired,
-
-    animationDuration: PropTypes.number.isRequired,
-
-    style: Animated.Text.propTypes.style,
-
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node,
-    ]),
   };
 
   constructor(props) {

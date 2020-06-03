@@ -18,6 +18,9 @@
     }],
 
     'comma-dangle': ['error', 'always-multiline'],
+
+    'react/prop-types': 0,
+    'react/no-deprecated': 0,
   },
 }
 

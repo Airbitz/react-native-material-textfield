@@ -1,13 +1,10 @@
-import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import {
   View,
-  Text,
   TextInput,
   Animated,
   StyleSheet,
   Platform,
-  ViewPropTypes,
 } from 'react-native';
 
 import RN from 'react-native/package.json';
@@ -44,46 +41,6 @@ export default class TextField extends PureComponent {
 
     disabled: false,
     disabledLineType: 'dotted',
-  };
-
-  static propTypes = {
-    ...TextInput.propTypes,
-
-    animationDuration: PropTypes.number,
-
-    fontSize: PropTypes.number,
-    titleFontSize: PropTypes.number,
-    labelFontSize: PropTypes.number,
-    labelHeight: PropTypes.number,
-    labelPadding: PropTypes.number,
-    inputContainerPadding: PropTypes.number,
-
-    labelTextStyle: Text.propTypes.style,
-    titleTextStyle: Text.propTypes.style,
-    affixTextStyle: Text.propTypes.style,
-
-    tintColor: PropTypes.string,
-    textColor: PropTypes.string,
-    baseColor: PropTypes.string,
-
-    label: PropTypes.string.isRequired,
-    title: PropTypes.string,
-
-    characterRestriction: PropTypes.number,
-
-    error: PropTypes.string,
-    errorColor: PropTypes.string,
-
-    disabled: PropTypes.bool,
-    disabledLineType: Line.propTypes.type,
-
-    renderAccessory: PropTypes.func,
-
-    prefix: PropTypes.string,
-    suffix: PropTypes.string,
-
-    containerStyle: (ViewPropTypes || View.propTypes).style,
-    inputContainerStyle: (ViewPropTypes || View.propTypes).style,
   };
 
   constructor(props) {
